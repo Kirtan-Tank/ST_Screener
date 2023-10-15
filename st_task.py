@@ -76,7 +76,8 @@ if ticker_val:
 
         # Plot the results using Plotly Express
         st.subheader("Filtered Data - Price Chart")
-        fig_filtered = px.line(results_df, x=results_df.index, y='Close')
+        # fig_filtered = px.line(results_df, x=results_df.index, y='Close')
+        fig_filtered = px.line(results_df)
         st.plotly_chart(fig_filtered)
 
 # Add a reset button to clear inputs
