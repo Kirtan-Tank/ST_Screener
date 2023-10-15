@@ -86,4 +86,4 @@ if st.button("Reset"):
 
 #Author details
 st.write("🐱‍💻 Made by Kirtan Tank")
-st.write("📧 > cosmickirtan@gmail.com)
+st.write("📧 > cosmickirtan@gmail.com")
