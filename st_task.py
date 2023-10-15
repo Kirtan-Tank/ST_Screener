@@ -45,6 +45,7 @@ if ticker_val:
     st.plotly_chart(fig)
 
     # Get user input for the date range
+    st.subheader("🗓️ Select Date Range")
     start_date = st.text_input("Enter the start date (YYYY-MM-DD):")
     end_date = st.text_input("Enter the end date (YYYY-MM-DD):")
 
