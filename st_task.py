@@ -63,16 +63,16 @@ if ticker_val:
 
         # Apply the selected filter condition
         if choice == "Open=Low and Close=High":
-            st.write("Open=Low and Close=High")
+            st.write("✅ Open=Low and Close=High")
             results_df = stock_df[(stock_df['Open'] == stock_df['Low']) & (stock_df['Close'] == stock_df['High'])]
         elif choice == "Open=Low or Close=High":
-            st.write("Open=Low or Close=High")
+            st.write("✅ Open=Low or Close=High")
             results_df = stock_df[(stock_df['Open'] == stock_df['Low']) | (stock_df['Close'] == stock_df['High'])]
         elif choice == "Open=High and Close=Low":
-            st.write("Open=High and Close=Low")
+            st.write("✅ Open=High and Close=Low")
             results_df = stock_df[(stock_df['Open'] == stock_df['High']) & (stock_df['Close'] == stock_df['Low'])]
         elif choice == "Open=High or Close=Low":
-            st.write("Open=High or Close=Low")
+            st.write("✅ Open=High or Close=Low")
             results_df = stock_df[(stock_df['Open'] == stock_df['High']) | (stock_df['Close'] == stock_df['Low'])]
 
         # Display filtered data
