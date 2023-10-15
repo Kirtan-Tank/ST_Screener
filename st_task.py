@@ -22,6 +22,7 @@ ticker_val = st.text_input("Enter the stock ticker (e.g., AAPL for Apple):")
 if ticker_val:
     ticker = yf.Ticker(ticker_val)
     st.subheader(f"Information about {ticker_val}")
+    ticker.info
     # st.dataframe(pd.DataFrame(ticker.info))
     # st.DataFrame(ticker.info).iloc[0, 0:8]
 
