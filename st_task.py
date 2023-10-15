@@ -31,7 +31,7 @@ if ticker_val:
     st.dataframe(ticker.dividends)
     st.dataframe(ticker.major_holders)
     st.dataframe(ticker.institutional_holders)
-    st.dataframe(ticker.cashflow)
+    # st.dataframe(ticker.cashflow)
 
     # Get today's date
     today = datetime.now().date().strftime("%Y-%m-%d")
