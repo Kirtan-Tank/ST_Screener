@@ -5,4 +5,4 @@ plotly==5.16.1
 seaborn==0.13.0
 yfinance==0.2.31
 streamlit-lottie==0.0.5
-requests==2.28.2
+requests==2.31
