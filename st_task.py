@@ -25,12 +25,12 @@ if ticker_val:
     st.dataframe(pd.DataFrame(ticker.info).iloc[0, 0:8])
 
     # Load stock splits, dividends, major holders, institutional holders, and cashflow data
-    st.subheader("Additional Information")
-    st.dataframe(ticker.splits)
-    st.dataframe(ticker.dividends)
-    st.dataframe(ticker.major_holders)
-    st.dataframe(ticker.institutional_holders)
-    st.dataframe(ticker.cashflow)
+    # st.subheader("Additional Information")
+    # st.dataframe(ticker.splits)
+    # st.dataframe(ticker.dividends)
+    # st.dataframe(ticker.major_holders)
+    # st.dataframe(ticker.institutional_holders)
+    # st.dataframe(ticker.cashflow)
 
     # Get today's date
     today = datetime.now().date().strftime("%Y-%m-%d")
