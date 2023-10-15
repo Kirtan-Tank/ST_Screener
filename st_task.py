@@ -16,6 +16,17 @@ st.set_page_config(
 st.title("Stock Screener App 📈")
 st.header("Filter stocks based on specific conditions")
 
+def lottieurl_load(url: str):
+    r= requests.get(url)
+    if r.status_code !=200:
+        return None
+    return r.json()
+    
+lottie_img = lottieurl_load("https://lottie.host/42148570-01d8-4042-9fab-7069f543f8a0/mEqzvUMVzI.json")   
+with st.columns(3)[1]:
+    st_lottie(lottie_img,speed=1,reverse=False,loop=True,quality="medium",height=250,width=250,key=None)
+
+
 # Get user input for the stock ticker
 ticker_val = st.text_input("Enter the stock ticker (e.g., AAPL for Apple):")
 
