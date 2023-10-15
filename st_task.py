@@ -22,12 +22,12 @@ ticker_val = st.text_input("Enter the stock ticker (e.g., AAPL for Apple):")
 if ticker_val:
     ticker = yf.Ticker(ticker_val)
     st.subheader(f"Information about {ticker_val}")
-    ticker.info
+    # ticker.info
     # st.dataframe(pd.DataFrame(ticker.info))
     # st.DataFrame(ticker.info).iloc[0, 0:8]
 
     # Load stock splits, dividends, major holders, institutional holders, and cashflow data
-    st.subheader("Additional Information")
+    # st.subheader("Additional Information")
     st.dataframe(ticker.splits)
     st.dataframe(ticker.dividends)
     st.dataframe(ticker.major_holders)
@@ -40,7 +40,7 @@ if ticker_val:
     # Plot the historical closing price of the stock
     st.subheader("Historical Closing Price")
     fig = px.line(ticker.history(start="2002-10-01", end=today)["Close"])
-    fig.update_xaxes(range=["2019-03-01", None])
+    # fig.update_xaxes(range=["2019-03-01", None])
     st.plotly_chart(fig)
 
     # Get user input for the date range
@@ -79,8 +79,15 @@ if ticker_val:
         # Plot the results using Plotly Express
         st.subheader("Filtered Data - Price Chart")
         # fig_filtered = px.line(results_df, x=results_df.index, y='Close')
-        fig_filtered = px.line(results_df)
-        st.plotly_chart(fig_filtered)
+        fig = go.Figure(data=[go.Candlestick(x=results_df['Date'],
+                open=results_df['Open'],
+                high=results_df['High'],
+                low=results_df['Low'],
+                close=results_df['Close'])])
+
+        
+        # fig_filtered = px.line(results_df)
+        st.plotly_chart(fig)
 
 # Add a reset button to clear inputs
 if st.button("Reset"):
