@@ -78,16 +78,17 @@ if ticker_val:
         st.dataframe(results_df)
 
         # Plot the results using Plotly Express
-        st.subheader("Filtered Data - Price Chart")
-        # fig_filtered = px.line(results_df, x=results_df.index, y='Close')
-        fig = go.Figure(data=[go.Candlestick(x=results_df['Date'],
+        st.subheader("Filtered Data - Price Line Chart")
+        fig_filtered = px.line(results_df)
+        st.plotly_chart(fig_filtered)
+
+        st.subheader("Filtered Data - Price Candlestick Chart")
+        fig = go.Figure(data=[go.Candlestick(x=results_df.index,
                 open=results_df['Open'],
                 high=results_df['High'],
                 low=results_df['Low'],
                 close=results_df['Close'])])
 
-        
-        # fig_filtered = px.line(results_df)
         st.plotly_chart(fig)
 
 # Add a reset button to clear inputs
