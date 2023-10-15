@@ -83,3 +83,7 @@ if ticker_val:
 # Add a reset button to clear inputs
 if st.button("Reset"):
     st.experimental_rerun()
+
+#Author details
+st.write("🐱‍💻 Made by Kirtan Tank")
+st.write("📧 > cosmickirtan@gmail.com)
