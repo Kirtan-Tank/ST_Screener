@@ -55,7 +55,7 @@ if ticker_val:
         stock_df = stock_df[['Open', 'High', 'Low', 'Close']]
 
         # Get user input for filtering conditions
-        st.subheader("Filter Stock Data")
+        st.subheader("⚙️ Filter Stock Data")
         choice = st.radio(
             "Select a filter condition:",
             ("Open=Low and Close=High", "Open=Low or Close=High", "Open=High and Close=Low", "Open=High or Close=Low")
