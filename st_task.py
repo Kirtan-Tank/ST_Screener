@@ -22,10 +22,11 @@ ticker_val = st.text_input("Enter the stock ticker (e.g., AAPL for Apple):")
 if ticker_val:
     ticker = yf.Ticker(ticker_val)
     st.subheader(f"Information about {ticker_val}")
-    # st.dataframe(pd.DataFrame(ticker.info).iloc[0, 0:8])
+    info_df=pd.DataFrame(ticker.info).iloc[0, 0:8]
+    st.dataframe(info_df)
 
     # Load stock splits, dividends, major holders, institutional holders, and cashflow data
-    # st.subheader("Additional Information")
+    st.subheader("Additional Information")
     # st.dataframe(ticker.splits)
     # st.dataframe(ticker.dividends)
     # st.dataframe(ticker.major_holders)
