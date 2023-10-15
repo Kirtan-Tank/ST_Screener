@@ -22,7 +22,7 @@ def lottieurl_load(url: str):
         return None
     return r.json()
     
-lottie_img = lottieurl_load("https://lottie.host/42148570-01d8-4042-9fab-7069f543f8a0/mEqzvUMVzI.json")   
+lottie_img = lottieurl_load("https://app.lottiefiles.com/animation/19875d56-594a-4d75-b909-464fc66cf6ab")   
 with st.columns(3)[1]:
     st_lottie(lottie_img,speed=1,reverse=False,loop=True,quality="medium",height=250,width=250,key=None)
 
