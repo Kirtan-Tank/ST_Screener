@@ -12,7 +12,7 @@ st.set_page_config(
 )
 
 # Title and header
-st.title("Stock Screener App 🗠")
+st.title("Stock Screener App 📈")
 st.header("Filter stocks based on specific conditions")
 
 # Get user input for the stock ticker
