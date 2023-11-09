@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 import requests
+import lxml
 import streamlit as st
 import json
 
