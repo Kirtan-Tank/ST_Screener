@@ -30,7 +30,7 @@ condition = { "scan_clause" : "( {57960} ( [0] 15 minute close > [-1] 15 minute 
 data = s.post(url, headers= header, data= condition).json()
 
 
-st.DataFrame(data['data'])
+st.dataframe(data['data'])
 
 
 
