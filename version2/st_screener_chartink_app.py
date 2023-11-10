@@ -43,6 +43,7 @@ header = {"X-Csrf-Token" : csrf_token}
 
 # we need to pass conditions (Payload) in data
 # condition = { "scan_clause" : "( {57960} ( [0] 15 minute close > [-1] 15 minute max( 20 , [0] 15 minute close ) and [0] 15 minute volume > [0] 15 minute sma( volume,20 ) ) )" }
+st.subheader("Available filters")
 choice = st.radio(
     "Select any filter",
     ("No Filter", "OPEN EQUALS HIGH", "OPEN EQUALS LOW", "CLOSE EQUALS HIGH", "CLOSE EQUALS LOW", "OPEN EQUALS HIGH AND CLOSE EQUALS LOW", "OPEN EQUALS LOW AND CLOSE EQUALS HIGH"),
@@ -78,9 +79,12 @@ if st.button('Refresh'):
 else:
   pass
     
-df=pd.DataFrame(data['data'])
-df=df.drop('sr', axis=1)
-st.dataframe(df)
+try:
+	df=pd.DataFrame(data['data'])
+	df=df.drop('sr', axis=1)
+	st.dataframe(df)
+except:
+	st.write("No data available! Try a different filter")
 # st.dataframe(data['data'])
 
 
