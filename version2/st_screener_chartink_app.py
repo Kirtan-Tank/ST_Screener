@@ -42,7 +42,30 @@ with requests.session() as s:
 header = {"X-Csrf-Token" : csrf_token}
 
 # we need to pass conditions (Payload) in data
-condition = { "scan_clause" : "( {57960} ( [0] 15 minute close > [-1] 15 minute max( 20 , [0] 15 minute close ) and [0] 15 minute volume > [0] 15 minute sma( volume,20 ) ) )" }
+# condition = { "scan_clause" : "( {57960} ( [0] 15 minute close > [-1] 15 minute max( 20 , [0] 15 minute close ) and [0] 15 minute volume > [0] 15 minute sma( volume,20 ) ) )" }
+option = st.selectbox(
+    'How would you like to be contacted?',
+    ('Email', 'Home phone', 'Mobile phone'))
+
+
+condition={}
+
+if choice== 1:
+  # we need to pass conditions (Payload) in data
+  condition = {"scan_clause" : "( {57960} ( [0] 15 minute close > [-1] 15 minute max( 20 , [0] 15 minute close ) and [0] 15 minute volume > [0] 15 minute sma( volume,20 ) ) )" }
+elif choice== 2: #OPEN EQUALS HIGH
+  condition = {"scan_clause" :"( {cash} ( [0] 15 minute close > [-1] 15 minute max( 20 , [0] 15 minute close ) and [0] 15 minute volume > [0] 15 minute sma( volume,20 ) and latest open = latest high ) )"}
+elif choice== 3: #OPEN EQUALS LOW
+  condition = {"scan_clause": "( {57960} ( [0] 15 minute close > [-1] 15 minute max( 20 , [0] 15 minute close ) and [0] 15 minute volume > [0] 15 minute sma( volume,20 ) and latest open = latest low ) ) "}
+elif choice== 4: #CLOSE EQUALS HIGH
+  condition = {"scan_clause": "( {57960} ( [0] 15 minute close > [-1] 15 minute max( 20 , [0] 15 minute close ) and [0] 15 minute volume > [0] 15 minute sma( volume,20 ) and latest close = latest high ) )" }
+elif choice== 5: #CLOSE EQUALS LOW 
+  condition = {"scan_clause": "( {57960} ( [0] 15 minute close > [-1] 15 minute max( 20 , [0] 15 minute close ) and [0] 15 minute volume > [0] 15 minute sma( volume,20 ) and latest close = latest low ) ) "}
+elif choice== 6: #OPEN EQUALS HIGH AND CLOSE EQUALS LOW
+  condition = {"scan_clause": "( {57960} ( [0] 15 minute close > [-1] 15 minute max( 20 , [0] 15 minute close ) and [0] 15 minute volume > [0] 15 minute sma( volume,20 ) and latest open = latest high and latest close = latest low ) )"}
+else: #OPEN EQUALS LOW AND CLOSE EQUALS HIGH
+  condition= {"scan_clause": "( {57960} ( [0] 15 minute close > [-1] 15 minute max( 20 , [0] 15 minute close ) and [0] 15 minute volume > [0] 15 minute sma( volume,20 ) and latest open = latest low and latest close = latest high ) )"}
+
 
 # data will be returned in a JSON format
 data = s.post(url, headers= header, data= condition).json() 
