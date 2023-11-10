@@ -43,6 +43,6 @@ if st.button('Refresh'):
 else:
   pass
     
-df=st.dataframe(data['data'])
+df=pd.DataFrame(data['data'])
 df=df.drop('sr', axis=1)
-df
+st.dataframe(df)
