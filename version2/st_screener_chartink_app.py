@@ -48,16 +48,16 @@ condition = { "scan_clause" : "( {57960} ( [0] 15 minute close > [-1] 15 minute 
 data = s.post(url, headers= header, data= condition).json() 
 
 
-if st.button('Refresh'):
-  data = s.post(url, headers= header, data= condition).json()
-  st.dataframe(data['data'])
-else:
-  pass
+# if st.button('Refresh'):
+#   data = s.post(url, headers= header, data= condition).json()
+#   st.dataframe(data['data'])
+# else:
+#   pass
     
 # df=pd.DataFrame(data['data'])
 # df=df.drop('sr', axis=1)
 # st.dataframe(df)
-# st.dataframe(data['data'])
+st.dataframe(data['data'])
 
 
 st.markdown(":computer: _Made by Kirtan Tank_")
