@@ -11,7 +11,7 @@ url= "https://chartink.com/screener/process"
 
 st.markdown("""
 <style>
-	[data-testid="stDecoration"] {
+	[data-testid="stHeader"] {
 		background-image: linear-gradient(90deg, rgb(0, 102, 204), rgb(102, 255, 255));
 	}
 </style>""",
