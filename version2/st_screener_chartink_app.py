@@ -9,6 +9,7 @@ from bs4 import BeautifulSoup as bs
 
 url= "https://chartink.com/screener/process"
 
+#header customization
 st.markdown("""
 <style>
 	[data-testid="stHeader"] {
@@ -49,6 +50,7 @@ data = s.post(url, headers= header, data= condition).json()
 
 if st.button('Refresh'):
   data = s.post(url, headers= header, data= condition).json()
+  st.dataframe(data['data'])
 else:
   pass
     
