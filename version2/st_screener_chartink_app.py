@@ -54,15 +54,15 @@ condition={}
 if choice== "No Filter":
   # we need to pass conditions (Payload) in data
   condition = {"scan_clause" : "( {57960} ( [0] 15 minute close > [-1] 15 minute max( 20 , [0] 15 minute close ) and [0] 15 minute volume > [0] 15 minute sma( volume,20 ) ) )" }
-elif choice== "OPEN EQUALS HIGH"
+elif choice== "OPEN EQUALS HIGH":
   condition = {"scan_clause" :"( {cash} ( [0] 15 minute close > [-1] 15 minute max( 20 , [0] 15 minute close ) and [0] 15 minute volume > [0] 15 minute sma( volume,20 ) and latest open = latest high ) )"}
-elif choice== "OPEN EQUALS LOW"
+elif choice== "OPEN EQUALS LOW":
   condition = {"scan_clause": "( {57960} ( [0] 15 minute close > [-1] 15 minute max( 20 , [0] 15 minute close ) and [0] 15 minute volume > [0] 15 minute sma( volume,20 ) and latest open = latest low ) ) "}
-elif choice== "CLOSE EQUALS HIGH"
+elif choice== "CLOSE EQUALS HIGH":
   condition = {"scan_clause": "( {57960} ( [0] 15 minute close > [-1] 15 minute max( 20 , [0] 15 minute close ) and [0] 15 minute volume > [0] 15 minute sma( volume,20 ) and latest close = latest high ) )" }
-elif choice== "CLOSE EQUALS LOW" 
+elif choice== "CLOSE EQUALS LOW": 
   condition = {"scan_clause": "( {57960} ( [0] 15 minute close > [-1] 15 minute max( 20 , [0] 15 minute close ) and [0] 15 minute volume > [0] 15 minute sma( volume,20 ) and latest close = latest low ) ) "}
-elif choice== "OPEN EQUALS HIGH AND CLOSE EQUALS LOW"
+elif choice== "OPEN EQUALS HIGH AND CLOSE EQUALS LOW":
   condition = {"scan_clause": "( {57960} ( [0] 15 minute close > [-1] 15 minute max( 20 , [0] 15 minute close ) and [0] 15 minute volume > [0] 15 minute sma( volume,20 ) and latest open = latest high and latest close = latest low ) )"}
 else: #OPEN EQUALS LOW AND CLOSE EQUALS HIGH
   condition= {"scan_clause": "( {57960} ( [0] 15 minute close > [-1] 15 minute max( 20 , [0] 15 minute close ) and [0] 15 minute volume > [0] 15 minute sma( volume,20 ) and latest open = latest low and latest close = latest high ) )"}
