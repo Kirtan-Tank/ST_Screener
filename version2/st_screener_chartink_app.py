@@ -9,6 +9,14 @@ from bs4 import BeautifulSoup as bs
 
 url= "https://chartink.com/screener/process"
 
+st.markdown("""
+<style>
+	[data-testid="stDecoration"] {
+		background-image: linear-gradient(90deg, rgb(0, 102, 204), rgb(102, 255, 255));
+	}
+</style>""",
+unsafe_allow_html=True)
+
 # Title and header
 st.title("Stock Screener App v2 📈")
 
