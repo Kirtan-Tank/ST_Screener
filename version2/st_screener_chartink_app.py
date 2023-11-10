@@ -48,3 +48,6 @@ else:
 # df=df.drop('sr', axis=1)
 # st.dataframe(df)
 st.dataframe(data['data'])
+
+
+st.markdown(:computer: _Made by Kirtan Tank_)
