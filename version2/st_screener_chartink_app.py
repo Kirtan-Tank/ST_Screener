@@ -45,4 +45,5 @@ else:
     
 # df=pd.DataFrame(data['data'])
 # df=df.drop('sr', axis=1)
-st.dataframe(df)
+# st.dataframe(df)
+st.dataframe(data['data'])
