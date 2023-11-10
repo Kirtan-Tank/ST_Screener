@@ -43,9 +43,10 @@ header = {"X-Csrf-Token" : csrf_token}
 
 # we need to pass conditions (Payload) in data
 # condition = { "scan_clause" : "( {57960} ( [0] 15 minute close > [-1] 15 minute max( 20 , [0] 15 minute close ) and [0] 15 minute volume > [0] 15 minute sma( volume,20 ) ) )" }
-option = st.selectbox(
-    'How would you like to be contacted?',
-    ('Email', 'Home phone', 'Mobile phone'))
+choice = st.radio(
+    "Select any filter",
+    [1, 2, 3, 4, 5, 6, 7],
+    captions = ["No Filter", "OPEN EQUALS HIGH", "OPEN EQUALS LOW", "CLOSE EQUALS HIGH", "CLOSE EQUALS LOW", "OPEN EQUALS HIGH AND CLOSE EQUALS LOW", "OPEN EQUALS LOW AND CLOSE EQUALS HIGH" ])
 
 
 condition={}
