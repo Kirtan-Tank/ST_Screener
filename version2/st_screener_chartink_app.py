@@ -50,4 +50,4 @@ else:
 st.dataframe(data['data'])
 
 
-st.markdown(:computer: _Made by Kirtan Tank_)
+st.markdown(":computer: _Made by Kirtan Tank_")
