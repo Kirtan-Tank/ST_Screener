@@ -38,12 +38,12 @@ condition = { "scan_clause" : "( {57960} ( [0] 15 minute close > [-1] 15 minute 
 # data will be returned in a JSON format
 data = s.post(url, headers= header, data= condition).json() 
 
-"""
+
 if st.button('Refresh'):
   data = s.post(url, headers= header, data= condition).json()
 else:
   pass
-"""    
+    
 # df=pd.DataFrame(data['data'])
 # df=df.drop('sr', axis=1)
 # st.dataframe(df)
