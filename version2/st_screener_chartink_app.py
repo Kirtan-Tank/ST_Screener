@@ -73,12 +73,14 @@ else: #OPEN EQUALS LOW AND CLOSE EQUALS HIGH
 data = s.post(url, headers= header, data= condition).json() 
 
 
+st.write("")
 if st.button('Refresh'):
   data = s.post(url, headers= header, data= condition).json()
   # st.dataframe(data['data'])
 else:
   pass
-    
+
+st.subheader("Available stocks")
 try:
 	df=pd.DataFrame(data['data'])
 	df=df.drop('sr', axis=1)
