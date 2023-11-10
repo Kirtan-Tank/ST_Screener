@@ -36,11 +36,13 @@ header = {"X-Csrf-Token" : csrf_token}
 condition = { "scan_clause" : "( {57960} ( [0] 15 minute close > [-1] 15 minute max( 20 , [0] 15 minute close ) and [0] 15 minute volume > [0] 15 minute sma( volume,20 ) ) )" }
 
 # data will be returned in a JSON format
-data = s.post(url, headers= header, data= condition).json()
+data = s.post(url, headers= header, data= condition).json() 
 
 if st.button('Refresh'):
   data = s.post(url, headers= header, data= condition).json()
 else:
   pass
     
-st.dataframe(data['data'])
+df=st.dataframe(data['data'])
+df=df.drop('sr', axis=1)
+df
