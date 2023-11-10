@@ -45,8 +45,8 @@ header = {"X-Csrf-Token" : csrf_token}
 # condition = { "scan_clause" : "( {57960} ( [0] 15 minute close > [-1] 15 minute max( 20 , [0] 15 minute close ) and [0] 15 minute volume > [0] 15 minute sma( volume,20 ) ) )" }
 choice = st.radio(
     "Select any filter",
-    ["No Filter", "OPEN EQUALS HIGH", "OPEN EQUALS LOW", "CLOSE EQUALS HIGH", "CLOSE EQUALS LOW", "OPEN EQUALS HIGH AND CLOSE EQUALS LOW", "OPEN EQUALS LOW AND CLOSE EQUALS HIGH" ],
-    captions = ["No Filter", "OPEN EQUALS HIGH", "OPEN EQUALS LOW", "CLOSE EQUALS HIGH", "CLOSE EQUALS LOW", "OPEN EQUALS HIGH AND CLOSE EQUALS LOW", "OPEN EQUALS LOW AND CLOSE EQUALS HIGH" ])
+    ("No Filter", "OPEN EQUALS HIGH", "OPEN EQUALS LOW", "CLOSE EQUALS HIGH", "CLOSE EQUALS LOW", "OPEN EQUALS HIGH AND CLOSE EQUALS LOW", "OPEN EQUALS LOW AND CLOSE EQUALS HIGH"),
+    )
 
 
 condition={}
